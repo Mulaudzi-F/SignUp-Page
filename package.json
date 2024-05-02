@@ -9,6 +9,7 @@
   "author": "Fhatuwani Mulaudzi",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "vite": "^5.2.10"
   }
 }

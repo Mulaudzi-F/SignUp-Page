@@ -1,9 +1,11 @@
 import { useState } from "react";
+import React from "react";
+import LoginPage from "./components/loginPage";
 
 function App() {
   return (
-    <div className="">
-      <h1>Hello world</h1>
+    <div>
+      <LoginPage />
     </div>
   );
 }

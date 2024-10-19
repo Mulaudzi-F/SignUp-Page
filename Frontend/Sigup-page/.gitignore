@@ -24,4 +24,4 @@ dist-ssr
 *.sw? 
 
 ../node_modules
-../Backend/config.env
+../Backend/cofig.env

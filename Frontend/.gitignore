@@ -23,4 +23,4 @@ dist-ssr
 *.sln
 *.sw? 
 
-../Backend/utils/ 
+../Backend/utils/config.env

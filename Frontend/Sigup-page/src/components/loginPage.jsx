@@ -1,10 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 
 function LoginPage() {
-  const [data, setData] = useState("");
-
   return (
     <div className="flex justify-center flex-col gap-y-1.5  items-center">
       <input

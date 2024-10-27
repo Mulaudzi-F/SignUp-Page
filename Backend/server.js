@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 //==============Unhandled Exception=============
 
 dotenv.config({
-  path: "./config.env",
+  path: "./utils/config.env",
 });
 const app = require("./app");
 const DB = process.env.DATABASE.replace(

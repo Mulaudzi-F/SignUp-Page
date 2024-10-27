@@ -2,6 +2,7 @@ const crypto = require("crypto");
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
+const CatchAsync = require("../utils/CatchAsync");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -71,8 +72,8 @@ UserSchema.pre("save", async function (next) {
 });
 
 UserSchema.pre("save", function (next) {
-  if (!this.isModified("password")) return next();
-  this.passwordChangedAt = Date.now() - 1;
+  if (!this.isModified("password") || this.isNew) return next();
+  this.passwordChangedAt = Date.now() - 1000;
   next();
 });
 
@@ -87,7 +88,7 @@ UserSchema.methods.correctPassword = async function (
 UserSchema.methods.passwordChangedAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
     const changedTimestamp = parseInt(
-      this.passwordChangedAt.getTime() / 100,
+      this.passwordChangedAt.getTime() / 1000,
       10
     );
 
@@ -115,9 +116,11 @@ UserSchema.methods.createPasswordResetToken = function () {
     .update(resetToken)
     .digest("hex");
   this.passwordResertExpires = Date.now() + 10 * 60 * 1000;
-  console.log({ resetToken }, this.passwordResetToken);
+
   return resetToken;
 };
 
 const User = mongoose.model("User", UserSchema);
 module.exports = User;
+
+//--------------------------Protecting Routes-------------------//

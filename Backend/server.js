@@ -7,10 +7,7 @@ dotenv.config({
   path: "./utils/config.env",
 });
 const app = require("./app");
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
+const DB = process.env.DATABASE;
 
 moongoose.connect(DB, { tls: true }).then((con) =>
   //console.log(con.Connections)

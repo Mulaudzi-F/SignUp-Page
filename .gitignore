@@ -1,2 +1,2 @@
 node_modules/
-/Backend/utils/config.env 
+*/ /Backend/utils/config.env */

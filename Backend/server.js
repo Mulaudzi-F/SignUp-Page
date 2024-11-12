@@ -13,7 +13,7 @@ moongoose.connect(DB, { tls: true }).then((con) =>
   //console.log(con.Connections)
   console.log(`DB connected to succesfully `)
 );
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {});
 console.log(`app is running on port ${port}`);
 

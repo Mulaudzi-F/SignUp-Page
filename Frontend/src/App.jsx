@@ -1,8 +1,53 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import LoginPage from "./components/loginPage";
-import { data } from "autoprefixer";
+import LoginPage from "./Authentication pages/loginPage";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  Router,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+import HomePage from "./Authentication pages/HomePage";
+import SignUpPage from "./components/SignUp";
+import PageNotFound from "./Authentication pages/NotFoundPages";
+import Loader from "./components/Loader";
+import WelcomePage from "./Authentication pages/Welcome";
+import UpdatePassword from "./Authentication pages/UpdatePassword";
+import AppLayOut from "./UI/AppLayOut";
 
+const router = createBrowserRouter([
+  {
+    element: <AppLayOut />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "SignIn",
+        element: <LoginPage />,
+      },
+      {
+        path: "SignUp",
+        element: <SignUpPage />,
+      },
+      {
+        path: "Welcome",
+        element: <WelcomePage />,
+      },
+      {
+        path: "UpdatePassword",
+        element: <UpdatePassword />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
+      },
+    ],
+  },
+]);
 function App() {
   const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
@@ -19,12 +64,8 @@ function App() {
     }
     FetchUsers();
     console.log(users);
-  }, []);
-  return (
-    <div className="flex justify-center items-center pt-10 h-full w-full">
-      <LoginPage />
-    </div>
-  );
+  }, [apiUrl]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;

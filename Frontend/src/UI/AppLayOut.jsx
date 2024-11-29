@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const AppLayOut = () => {
   return (
-    <main className="grid gap-8 h-screen">
+    <main className="grid gap-8  h-screen">
       <section className="flex flex-col gap-9">
         <Header />
         <div className="flex justify-center items-center">

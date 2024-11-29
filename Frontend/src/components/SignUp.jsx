@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import { FaGoogle } from "react-icons/fa";
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -38,26 +39,26 @@ const SignUpPage = () => {
     }
   };
   return (
-    <>
-      <section className="flex  rounded-md flex-col gap-6 w-1/2">
+    <section className="w-full flex justify-center items-center shadow-2xl  h-screen">
+      <div className="flex  rounded-md flex-col justify-center items-center h-full py-6 gap-6 w-1/2">
         <h1 className="font-bold  text-2xl text-center">Welcome to CatchUp</h1>
-        <form className="flex flex-col gap-4 bg-[#ede0d4] rounded-lg pt-8 w-full justify-center items-center">
+        <form className="flex flex-col gap-4 h-full w-9/12 bg-[#cfd2cd] rounded-lg pt-8  justify-center items-center">
           <input
-            className="w-1/2 rounded-md p-2"
+            className="w-1/2  p-2"
             placeholder="First Name"
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
-            className="w-1/2 rounded-md p-2"
+            className="w-1/2  p-2"
             placeholder="Last Name"
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md p-2"
+            className=" w-1/2  p-2"
             placeholder="Enter your Email Address"
             type="email"
             required
@@ -65,7 +66,7 @@ const SignUpPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md p-2"
+            className=" w-1/2  p-2"
             placeholder="Enter Password"
             required
             type="password"
@@ -73,7 +74,7 @@ const SignUpPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md p-2"
+            className=" w-1/2  p-2"
             placeholder="Confirm your Password"
             required
             type="password"
@@ -82,25 +83,27 @@ const SignUpPage = () => {
           />
           <button
             type="submit"
-            className="bg-[#8ecae6] my-2 w-1/4 rounded-md p-2"
+            className="bg-[#8ecae6] my-2 hover:bg-[white] w-1/2 rounded-md p-2"
             onClick={/*onhandleSignUp*/ handleCreateUser}
           >
             <Link to={isLoading ? "/Loader" : userCreated ? "/SignIn" : ""}>
-              <button className="hover:text-[#eec170] ">SignUp</button>
+              <button className="hover:text-[#eec170]  ">SignUp</button>
             </Link>
           </button>
           <p>
             Already Created Account ?
             <Link to="/SignIn">
-              <button className="hover:text-[#eec170] text-[#8ecae6]">
+              <button className="hover:text-[#eec170] ml-2 text-[#134074]">
                 SignIn
               </button>
             </Link>
           </p>
+          <button className="bg-[white] w-1/2 mx-4 flex justify-center items-center gap-2 rounded-md  py-2 hover:bg-[#eec170]">
+            <FaGoogle /> <span>Sign in with Google</span>
+          </button>
         </form>
-      </section>
-      )
-    </>
+      </div>
+    </section>
   );
 };
 

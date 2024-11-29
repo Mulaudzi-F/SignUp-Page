@@ -3,82 +3,79 @@ import { useState } from "react";
 import SignUpPage from "../components/SignUp";
 import { BrowserRouter, Link, Router } from "react-router-dom";
 import WelcomePage from "./Welcome";
+import { loginApi } from "../service/apiAuth";
+import { useLogin } from "../authentication/useLogin";
+import SpinnerMini from "../UI/spinnerMin";
+import { FaGoogle } from "react-icons/fa";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [Loading, setIsLoading] = useState("");
-  const [authenticated, setAuthenticated] = useState(false);
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const { login, isLoading } = useLogin();
 
   const handleLogInUser = async (e) => {
-    setIsLoading(true);
     e.preventDefault();
-    try {
-      const response = await fetch(`${apiUrl}/app/v1/users/signIn`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ password, email }),
-      });
 
-      const newUser = await response.json();
-      setIsLoading(false);
-      if (response.ok) {
-        setAuthenticated(true);
-        console.log("SignIn to CatchUp Successfully", newUser);
-      } else {
-        console.error("You Failed to SignIn to CatchUp", newUser.message);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    login({ email, password });
   };
 
   return (
-    <>
-      {authenticated ? (
-        <WelcomePage />
-      ) : (
-        <div className="flex justify-center bg-[#ede0d4] rounded-md p-10 mx-10 align-middle w-1/2 flex-col gap-y-1.5  items-center">
+    <div className="flex justify-center flex-col  z-100  w-full h-screen items-center">
+      <div className="bg-[white] flex gap-6 justify-center h-3/4 w-1/2 flex-col items-center ">
+        <h2 className="font-bold text-lg">Welcome Back</h2>
+        <form
+          onSubmit={handleLogInUser}
+          className="flex justify-center h-4/6  rounded-md  mx-10 align-middle w-1/2 flex-col gap-y-4  items-center"
+        >
           <input
             type="text"
-            className="w-1/2 rounded h-8 "
+            className="w-11/12 bg-white rounded h-12 py-2 "
             placeholder="Username / Email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></input>
+            autoComplete="username"
+          />
           <input
             type="password"
-            className="w-1/2 rounded h-8"
+            className="w-11/12 bg-white rounded py-2 h-12"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-          ></input>
-          <div className="flex justify-center  flex-col items-center">
-            <button
-              className="bg-[#abc4ff]  rounded-md px-4 py-2 hover:bg-[#eec170]"
-              type="submit"
-              onClick={handleLogInUser}
-            >
-              Submit
-            </button>{" "}
-            <br />
-            <p>
-              new to CatchUp ?{" "}
-              <Link to="/SignUp">
-                <button className="hover:text-[#eec170] text-[#8ecae6]">
-                  Click Here
-                </button>
-              </Link>
-            </p>
+            disabled={isLoading}
+            autoComplete="password"
+          />
+          <div className=" flex  w-full gap-12 ml-8">
+            <label className="flex">
+              <input type="checkbox" /> Remmber me
+            </label>
+            <p className="self-end ml-8">Forget password</p>
           </div>
-        </div>
-      )}
-    </>
+          <div className="flex justify-center  w-full flex-col gap-4 items-center">
+            <button
+              className="bg-[#abc4ff] w-11/12 mx-4  rounded-md  py-2 hover:bg-[#eec170]"
+              type="submit"
+            >
+              Login
+            </button>
+            <button className="bg-[white] w-1/2 mx-4 flex justify-center items-center gap-4 rounded-md  py-2 hover:bg-[#eec170]">
+              <FaGoogle /> <span>Sign in with Google</span>
+            </button>
+          </div>
+          <br />
+          <p>
+            Don't have an account ? Sign up
+            <Link to="/SignUp">
+              <button
+                disabled={isLoading}
+                className="hover:text-[#eec170] text-[#8ecae6]"
+              ></button>
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
   );
 }
 

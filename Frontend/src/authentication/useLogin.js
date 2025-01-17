@@ -1,14 +1,14 @@
 import { useMutation } from "@tanstack/react-query";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { loginApi } from "../service/apiAuth";
 
 export function useLogin() {
   const navigate = useNavigate();
-  const { mutate: login, isLoading } = useMutation({
+  const { mutate: login, isPending } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
-    onSuccess: () => {
-      navigate("/Welcome");
+    onSuccess: (user) => {
+      navigate("/DashBoardLayout");
     },
     onError: (err) => {
       console.log("ERROR", err);
@@ -16,5 +16,7 @@ export function useLogin() {
     },
   });
 
-  return { login, isLoading };
+  // console.log(useMutation({ ...isLoading }));
+
+  return { login, isPending };
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Loader from "./Loader";
+
 import { FaGoogle } from "react-icons/fa";
 
 const SignUpPage = () => {
@@ -86,7 +86,7 @@ const SignUpPage = () => {
             className="bg-[#8ecae6] my-2 hover:bg-[white] w-1/2 rounded-md p-2"
             onClick={/*onhandleSignUp*/ handleCreateUser}
           >
-            <Link to={isLoading ? "/Loader" : userCreated ? "/SignIn" : ""}>
+            <Link to={isLoading ? "" : userCreated ? "/SignIn" : ""}>
               <button className="hover:text-[#eec170]  ">SignUp</button>
             </Link>
           </button>

@@ -12,8 +12,6 @@ import {
 import HomePage from "./Authentication pages/HomePage";
 import SignUpPage from "./components/SignUp";
 import PageNotFound from "./Authentication pages/NotFoundPages";
-
-import WelcomePage from "./Authentication pages/Welcome";
 import UpdatePassword from "./Authentication pages/UpdatePassword";
 import AppLayOut from "./UI/AppLayOut";
 import {
@@ -23,6 +21,8 @@ import {
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
+import DashboardLayout from "./Dashboard/DashBoardLayout";
+import ProtectedRoute from "./UI/ProtectedRoute";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,16 +40,23 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="" element={<AppLayOut />} />
-            <Route path={"/"} element={<HomePage />} />
-            <Route path={"SignIn"} element={<SignUpPage />} />
+            {/* <Route path="" element={<AppLayOut />} /> */}
+
+            <Route path={"/"} element={<LoginPage />} />
             <Route path={"SignUp"} element={<SignUpPage />} />
-            <Route path={"Welcome"} element={<WelcomePage />} />
+            <Route
+              path={"DashBoardLayout"}
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout />
+                </ProtectedRoute>
+              }
+            />
             <Route path={"UpdatePassword"} element={<UpdatePassword />} />
             <Route path={"*"} element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
-        {/*
+
         <Toaster
           position="top-center"
           gutter={12}
@@ -69,7 +76,7 @@ function App() {
               color: "var(--color-grey-700)",
             },
           }}
-        />*/}
+        />
       </QueryClientProvider>
     </>
   );

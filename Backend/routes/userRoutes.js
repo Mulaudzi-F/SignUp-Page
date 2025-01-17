@@ -8,10 +8,11 @@ const {
   protect,
   updatePassword,
 } = require("../Controller/authController");
-const { getAllUsers } = require("../Controller/userController");
+const { getAllUsers, getUser, getMe } = require("../Controller/userController");
 
 const router = express.Router();
-
+router.get("/:id", getUser);
+router.get("/me", protect, getMe, getUser);
 router.post("/signup", signUp);
 router.post("/signIn", login);
 router.post("/forgotpassword", forgotPassword);

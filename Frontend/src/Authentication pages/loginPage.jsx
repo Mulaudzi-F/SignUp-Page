@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import SignUpPage from "../components/SignUp";
 import { BrowserRouter, Link, Router } from "react-router-dom";
-import WelcomePage from "./Welcome";
+
 import { loginApi } from "../service/apiAuth";
 import { useLogin } from "../authentication/useLogin";
 import SpinnerMini from "../UI/spinnerMin";
@@ -11,17 +11,17 @@ import { FaGoogle } from "react-icons/fa";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isLoading } = useLogin();
+  const { login, isPending } = useLogin();
 
   const handleLogInUser = async (e) => {
     e.preventDefault();
+    if (!email || !password) return;
 
     login({ email, password });
   };
-
   return (
     <div className="flex justify-center flex-col  z-100  w-full h-screen items-center">
-      <div className="bg-[white] flex gap-6 justify-center h-3/4 w-1/2 flex-col items-center ">
+      <div className="bg-[#bfd7ff] flex gap-6 justify-center h-3/4 w-1/2 flex-col items-center ">
         <h2 className="font-bold text-lg">Welcome Back</h2>
         <form
           onSubmit={handleLogInUser}
@@ -35,6 +35,7 @@ function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             autoComplete="username"
+            disabled={isPending}
           />
           <input
             type="password"
@@ -43,7 +44,7 @@ function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            disabled={isLoading}
+            disabled={isPending}
             autoComplete="password"
           />
           <div className=" flex  w-full gap-12 ml-8">
@@ -54,21 +55,22 @@ function LoginPage() {
           </div>
           <div className="flex justify-center  w-full flex-col gap-4 items-center">
             <button
-              className="bg-[#abc4ff] w-11/12 mx-4  rounded-md  py-2 hover:bg-[#eec170]"
+              className="bg-[#abc4ff] w-11/12 mx-4 flex justify-center items-center  rounded-md  py-2 hover:bg-[#eec170]"
               type="submit"
+              disabled={isPending}
             >
-              Login
+              {!isPending ? "Login" : <SpinnerMini />}
             </button>
-            <button className="bg-[white] w-1/2 mx-4 flex justify-center items-center gap-4 rounded-md  py-2 hover:bg-[#eec170]">
+            <button className="bg-[white] w-full mx-4 flex justify-center items-center gap-4 rounded-md  py-2 hover:bg-[#eec170]">
               <FaGoogle /> <span>Sign in with Google</span>
             </button>
           </div>
           <br />
           <p>
             Don't have an account ? Sign up
-            <Link to="/SignUp">
+            <Link to="/Signp">
               <button
-                disabled={isLoading}
+                disabled={isPending}
                 className="hover:text-[#eec170] text-[#8ecae6]"
               ></button>
             </Link>

@@ -1,8 +1,9 @@
 import { data } from "autoprefixer";
+import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 export async function loginApi({ email, password }) {
-  const response = await fetch(`${apiUrl}/app/v1/users/signIn`, {
+  const response = await fetch(`${apiUrl}/app/v1/users/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,16 +14,21 @@ export async function loginApi({ email, password }) {
   const {
     data: { user, error },
   } = await response.json();
-
+  localStorage.setItem("token", user.token);
   if (error) throw new Error(error.message);
   return user;
 }
 
 export async function getCurrentUser() {
-  const currentUser = await fetch(`${apiUrl}/app/v1/users/me`);
-  const { data, error } = await currentUser.json();
+  try {
+    const currentUser = await axios.get(`${apiUrl}/app/v1/users/me`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
 
-  console.log(currentUser);
-  if (error) throw new Error(error.message);
-  return data;
+    console.log(currentUser);
+  } catch (error) {
+    if (error) throw new Error(error.message);
+  }
 }

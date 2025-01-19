@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function DashBoardSideNav() {
   return (
-    <nav className="text-[white] fixed  h-full flex flex-col items-center shadow-md bg-[#222725] rounded-sm  w-40 ">
+    <nav className="text-[white] fixed hidden  list-none h-full md:flex flex-col items-center shadow-md bg-[#222725] rounded-sm  w-40 ">
       <ul className="flex flex-col  justify-center h-5/6 items-center gap-8 ">
         <li className="hover:text-[#1a759f]  cursor-pointer">
           <IoHomeOutline size={25} />

@@ -2,28 +2,33 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoMdNotifications } from "react-icons/io";
 import { BsChatSquareDots } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function DashBoardSideNav() {
   return (
-    <nav className="text-[white] h-5/6 flex flex-col items-center  bg-[#222725] rounded-sm  w-40 ">
+    <nav className="text-[white] fixed  h-full flex flex-col items-center shadow-md bg-[#222725] rounded-sm  w-40 ">
       <ul className="flex flex-col  justify-center h-5/6 items-center gap-8 ">
-        <li>
-          <FaRegCalendarAlt />
+        <li className="hover:text-[#1a759f]  cursor-pointer">
+          <IoHomeOutline size={25} />
         </li>
-        <li>
-          <BsChatSquareDots />
+        <li className="hover:text-[#1a759f] cursor-pointer">
+          <IoMdNotifications size={25} />
         </li>
-        <li>
-          <IoMdNotifications />
+        <li className="hover:text-[#1a759f] cursor-pointer">
+          <BsChatSquareDots size={25} />
         </li>
-        <li>
-          <IoHomeOutline />
+        <li className="hover:text-[#1a759f] cursor-pointer">
+          <FaRegCalendarAlt size={25} />
         </li>
-        <li>Tutors</li>
-        <li>Subscription</li>
-        <li>Transactions</li>
+
+        <li className="hover:text-[#1a759f] cursor-pointer">Tutors</li>
+        <li className="hover:text-[#1a759f] cursor-pointer">Subscription</li>
+        <li className="hover:text-[#1a759f] cursor-pointer">Transactions</li>
       </ul>
-      <button className="">Logout</button>
+
+      <button className="hover:text-[#1a759f]">
+        <Link to={"/"}>Logout</Link>
+      </button>
     </nav>
   );
 }

@@ -41,3 +41,5 @@ const DashBoardNav = () => {
     </nav>
   );
 };
+
+export default DashBoardNav;

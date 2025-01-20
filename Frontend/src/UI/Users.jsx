@@ -13,9 +13,12 @@ const UserCard = () => {
             <FaPlus />
           </span>
         </div>
-        <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+        <span>Lorem Ipsum</span> <span> Lorem Ipsum</span>{" "}
+        <span> Lorem Ipsum</span>
       </div>
-      <div></div>
+      <div>
+        <p></p>
+      </div>
       <div></div>
       <div></div>
     </section>

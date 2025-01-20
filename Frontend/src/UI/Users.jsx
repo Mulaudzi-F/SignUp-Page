@@ -1,4 +1,5 @@
-import { FaPlus } from "react-icons/fa6";
+import { FaUserPlus } from "react-icons/fa";
+import { IoStarHalf } from "react-icons/io5";
 
 const UserCard = () => {
   return (
@@ -7,19 +8,25 @@ const UserCard = () => {
         <div>
           <figure>
             <img alt="user-picture" />
-            <figcaption>Lorem Ipsum</figcaption>
+            <figcaption>User Names goes here</figcaption>
           </figure>
           <span>
-            <FaPlus />
+            <FaUserPlus />
           </span>
         </div>
+        <p>title will go here</p>
+      </div>
+      <div>
+        <p>
+          Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem
+          Lorem Lorem{" "}
+        </p>
+      </div>
+      <div>
+        {" "}
         <span>Lorem Ipsum</span> <span> Lorem Ipsum</span>{" "}
         <span> Lorem Ipsum</span>
       </div>
-      <div>
-        <p></p>
-      </div>
-      <div></div>
       <div></div>
     </section>
   );

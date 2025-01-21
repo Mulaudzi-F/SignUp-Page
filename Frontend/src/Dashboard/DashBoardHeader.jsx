@@ -3,9 +3,9 @@ import { FiAlignJustify } from "react-icons/fi";
 const baseUrl = "http://127.0.0.1:8000/";
 export default function DashBoardHeader() {
   const { user } = useUser();
-  console.log(user);
+
   return (
-    <header className="flex py-4 max-h-[10%] sm:p-0 sticky top-0  shadow-md sm:fixed z-10 bg-[#222725] rounded-sm  text-[white] items-center justify-around w-full">
+    <header className="flex py-4 max-h-[10%] sm:p-0  fixed top-0 left-0 right-0 z-50   shadow-md sm:fixed  bg-[#222725] rounded-sm  text-[white] items-center justify-around w-full">
       <figure className="justify-self-start flex flex-col justify-center items-center h-1/2 pl-6 md:pl-0 w-1/4 lg:w-[8%] md:w-[12%] rounded-full">
         <span className="w-1/2 flex justify-center items-center h-full rounded-full ">
           {" "}

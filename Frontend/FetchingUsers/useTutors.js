@@ -1,12 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
+import { getAllTutorUsers } from "../src/service/apiUsers";
 
-const useTutors = () => {
-  const { isLoading, data: tutors } = useQuery({
+export function useTutors() {
+  const {
+    isLoading,
+    isError,
+    error,
+    data: tutors,
+  } = useQuery({
     queryKey: ["tutors"],
-    queryFn: useTutors,
+    queryFn: getAllTutorUsers,
   });
 
-  return { isLoading, tutors };
-};
-
-export default useTutors;
+  return { isLoading, tutors, isError, error };
+}

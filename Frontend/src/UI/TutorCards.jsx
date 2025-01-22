@@ -12,7 +12,7 @@ const UserTutorCards = () => {
   }
 
   return (
-    <section className="pt-16 pb-16 flex-1 overflow-y-auto">
+    <section className="py-16 mt-8 flex-1 overflow-y-auto flex flex-col px-6 gap-4 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  ">
       {allTutors}
     </section>
   );

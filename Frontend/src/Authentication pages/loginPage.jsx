@@ -20,12 +20,12 @@ function LoginPage() {
     login({ email, password });
   };
   return (
-    <div className="flex justify-center flex-col  z-100  w-full h-screen items-center">
-      <div className="bg-[#bfd7ff] flex gap-6 justify-center h-3/4 w-1/2 flex-col items-center ">
+    <div className="flex justify-center flex-col px-2   z-100  w-full h-screen items-center">
+      <div className="bg-[#bfd7ff] flex gap-6 justify-center h-3/4 sm:w-1/2 flex-col items-center ">
         <h2 className="font-bold text-lg">Welcome Back</h2>
         <form
           onSubmit={handleLogInUser}
-          className="flex justify-center h-4/6  rounded-md  mx-10 align-middle w-1/2 flex-col gap-y-4  items-center"
+          className="flex justify-center h-4/6  rounded-md  mx-10 align-middle sm:w-1/2 flex-col gap-y-4  items-center"
         >
           <input
             type="text"
@@ -47,12 +47,7 @@ function LoginPage() {
             disabled={isPending}
             autoComplete="password"
           />
-          <div className=" flex  w-full gap-12 ml-8">
-            <label className="flex">
-              <input type="checkbox" /> Remmber me
-            </label>
-            <p className="self-end ml-8">Forget password</p>
-          </div>
+
           <div className="flex justify-center  w-full flex-col gap-4 items-center">
             <button
               className="bg-[#abc4ff] w-11/12 mx-4 flex justify-center items-center  rounded-md  py-2 hover:bg-[#eec170]"
@@ -61,6 +56,12 @@ function LoginPage() {
             >
               {!isPending ? "Login" : <SpinnerMini />}
             </button>
+            <div className=" flex  w-full gap-12 ml-8">
+              <label className="flex">
+                <input type="checkbox" /> Remmber me
+              </label>
+              <p className="self-end ml-8">Forget password</p>
+            </div>
             <button className="bg-[white] w-full mx-4 flex justify-center items-center gap-4 rounded-md  py-2 hover:bg-[#eec170]">
               <FaGoogle /> <span>Sign in with Google</span>
             </button>

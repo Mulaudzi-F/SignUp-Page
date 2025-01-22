@@ -9,8 +9,11 @@ export default function DashboardLayout() {
     <>
       <section className="h-screen w-full flex flex-col sm:block overflow-x-hidden">
         <DashBoardHeader />
-        <DashBoardSideNav />
-        <UserTutorCards />
+        <div className="flex gap-[9.5rem]">
+          <DashBoardSideNav />
+          <UserTutorCards />
+        </div>
+
         <DashBoardFooter />
       </section>
     </>

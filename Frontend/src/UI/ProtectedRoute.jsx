@@ -3,6 +3,7 @@ import { useUser } from "../authentication/useUser";
 import Spinner from "./spinner";
 import { use, useEffect } from "react";
 import styled from "styled-components";
+import { useTutors } from "../../FetchingUsers/useTutors";
 
 const FullPage = styled.div`
   height: 100vh;
@@ -16,6 +17,7 @@ export default function ProtectedRoute({ children }) {
   const navigate = useNavigate();
   //1 get the authenticated user
   const { user, isLoading } = useUser();
+
   //2 if no authenticated user redirect to login page
 
   useEffect(() => {

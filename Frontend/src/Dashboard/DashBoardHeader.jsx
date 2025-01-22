@@ -22,11 +22,11 @@ export default function DashBoardHeader() {
       <div className="justify-self-center flex  items-center h-full w-1/2">
         <input
           type="text"
-          className="sm:w-11/12 mr-3 w-full shadow-2xl rounded-lg  shadow-[black] py-2 sm:h-1/2"
+          className="sm:w-3/5 mr-3 w-full shadow-2xl rounded-lg   shadow-[black] py-2 sm:h-1/2"
           placeholder="Search"
         />
       </div>
-      <div className="justify-self-end cursor-pointer hover:bg-[#1a759f] sm:pr-10 shadow-inner w-1/4 sm:h-1/2 flex justify-center rounded-lg shadow-[#f8f9fa] ">
+      <div className="justify-self-end cursor-pointer hover:bg-[#1a759f] sm:pr-10 shadow-inner lg:w-1/12 md:w-2/12 w-1/4 sm:h-1/2 flex justify-center rounded-lg shadow-[#f8f9fa] ">
         <button className="w-full py-2 ">
           <span>R</span> <span className="w-full ">{user.balance}</span>
         </button>

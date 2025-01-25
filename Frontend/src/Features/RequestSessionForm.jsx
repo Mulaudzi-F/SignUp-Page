@@ -25,7 +25,7 @@ export const RequestSessionForm = () => {
 
         <div>
           <label
-            for="time"
+            htmlFor="time"
             className="block text-sm font-medium text-gray-700 mb-1"
           >
             Time
@@ -38,10 +38,25 @@ export const RequestSessionForm = () => {
             className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
         <div>
           <label
-            for="message"
+            htmlFor="courses"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Courses
+          </label>
+          <input
+            type="text"
+            id="courses"
+            name="courses"
+            placeholder="Enter the courses "
+            required
+            class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="message"
             className="block text-sm font-medium text-gray-700 mb-1"
           >
             Message

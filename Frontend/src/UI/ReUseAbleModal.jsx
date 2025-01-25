@@ -14,8 +14,9 @@ const ReusableModal = ({ isOpen, onClose, children }) => {
         overlay: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
         content: {
           margin: "auto",
-          width: "50%",
+          width: "75%",
           padding: "20px",
+          paddingTop: "50px",
           borderRadius: "8px",
         },
       }}

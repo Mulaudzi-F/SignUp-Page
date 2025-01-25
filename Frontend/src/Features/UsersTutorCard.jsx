@@ -2,12 +2,16 @@ import { FaUserPlus } from "react-icons/fa";
 import { IoStarHalf } from "react-icons/io5";
 
 import { useTutors } from "../../FetchingUsers/useTutors";
+import CardCourseButtons from "./CardCourseButtons";
+import { useState } from "react";
+import ReusableModal from "../UI/ReUseAbleModal";
+import { RequestSessionForm } from "./RequestSessionForm";
 
 const UserCard = ({ onTutorData }) => {
   const baseUrl = "http://127.0.0.1:8000/";
-  console.log(onTutorData);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="bg-red shadow-lg  flex flex-col flex-1  w-full rounded-md ">
+    <section className=" bg-[#343937] text-[#e9ecef] shadow-lg  flex flex-col flex-1  w-full rounded-md ">
       <div>
         <div className="flex justify-between pt-2">
           <figure>
@@ -26,18 +30,28 @@ const UserCard = ({ onTutorData }) => {
         </div>
         <p className="pl-2">title will go here</p>
       </div>
-      <div className="flex justify-center gap-2">
-        {" "}
-        <span>course 1</span> <span> course 2</span> <span> course 3</span>
+      <div className="flex justify-center py-6 gap-2">
+        {onTutorData.courses && (
+          <CardCourseButtons course={onTutorData.courses} />
+        )}
       </div>
       <div className="flex justify-center">
         <p className="text-center">{onTutorData.summary}</p>
       </div>
       <div className="flex justify-between p-8 items-center">
         <IoStarHalf size={22} />
-        <button className="bg-[#415a77] hover:bg-[#6c757d] text-stone-50 rounded-md p-3">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="bg-[#415a77] hover:bg-[#6c757d] text-stone-50 rounded-md p-3"
+        >
           Request
         </button>
+        <ReusableModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <RequestSessionForm />
+        </ReusableModal>
         <p>
           <span>6</span>sesions
         </p>

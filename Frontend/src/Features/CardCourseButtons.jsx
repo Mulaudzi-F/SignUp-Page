@@ -1,12 +1,11 @@
-import { useTutors } from "../../FetchingUsers/useTutors";
-
 const CardCourseButtons = ({ course }) => {
+  console.log(course);
   return (
-    <div className="flex justify-center gap-2">
+    <button className="flex bg-[#415a77] rounded-full hover:scale-75 p-1 justify-center gap-2">
       {course.map((course) => (
-        <span key={course.id}>{course.title}</span>
+        <span key={course.id}>{course.courseName}</span>
       ))}
-    </div>
+    </button>
   );
 };
 

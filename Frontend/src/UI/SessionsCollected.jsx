@@ -3,7 +3,7 @@ import SessionCard from "../Features/SessionCard";
 const SessionsCollected = () => {
   return (
     <>
-      <ul>
+      <ul className="pt-16">
         <SessionCard />
       </ul>
     </>

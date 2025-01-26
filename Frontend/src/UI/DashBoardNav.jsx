@@ -17,9 +17,12 @@ const DashBoardNav = () => {
         <li className="hover:text-[#1a759f] cursor-pointer">
           <BsChatSquareDots size={25} />
         </li>
-        <li className="hover:text-[#1a759f] cursor-pointer">
+        <Link
+          to="/DashboardLayout/sessions"
+          className="hover:text-[#1a759f] cursor-pointer"
+        >
           <FaRegCalendarAlt size={25} />
-        </li>
+        </Link>
 
         <li className="hidden sm:block hover:text-[#1a759f] cursor-pointer">
           Tutors

@@ -18,6 +18,7 @@ const ReusableModal = ({ isOpen, onClose, children }) => {
           padding: "20px",
           paddingTop: "50px",
           borderRadius: "8px",
+          zIndex: 1000,
         },
       }}
     >

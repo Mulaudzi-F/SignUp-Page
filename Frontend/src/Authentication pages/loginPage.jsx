@@ -69,7 +69,7 @@ function LoginPage() {
           <br />
           <p>
             Don't have an account ? Sign up
-            <Link to="/Signp">
+            <Link to="/SignUp">
               <button
                 disabled={isPending}
                 className="hover:text-[#eec170] text-[#8ecae6]"

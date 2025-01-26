@@ -11,38 +11,45 @@ const UserCard = ({ onTutorData }) => {
   const baseUrl = "http://127.0.0.1:8000/";
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className=" bg-[#343937] text-[#e9ecef] shadow-lg  flex flex-col flex-1  w-full rounded-md ">
-      <div>
-        <div className="flex justify-between pt-2">
-          <figure>
-            <img
-              alt="user-picture"
-              src={`${baseUrl}${onTutorData.photo}`}
-              className="rounded-r-full max-h-[100px]"
-            />
-            <figcaption className="font-bold pl-2">
-              {onTutorData.name}
-            </figcaption>
-          </figure>
-          <span className="m-1">
-            <FaUserPlus size={26} />
-          </span>
-        </div>
-        <p className="pl-2">title will go here</p>
+    <section className="bg-[#343937] text-[#e9ecef] shadow-lg flex flex-col w-full rounded-md p-4 md:p-6">
+      {/* Header Section */}
+      <div className="flex justify-between items-center">
+        <figure className="flex items-center">
+          <img
+            alt="user-picture"
+            src={`${baseUrl}${onTutorData.photo}`}
+            className="rounded-full h-20 w-20 object-cover shadow-md"
+          />
+          <figcaption className="font-bold text-lg pl-4">
+            {onTutorData.name}
+          </figcaption>
+        </figure>
+        <span className="m-1 text-[#e9ecef] hover:text-[#6c757d] cursor-pointer">
+          <FaUserPlus size={26} />
+        </span>
       </div>
-      <div className="flex justify-center py-6 gap-2">
+      {/* Title Section */}
+      <p className="pl-2 mt-4 text-sm md:text-base font-medium text-[#adb5bd]">
+        {onTutorData.title || "Title will go here"}
+      </p>
+      {/* Courses Section */}
+      <div className="flex justify-center py-6 gap-2 flex-wrap">
         {onTutorData.courses && (
           <CardCourseButtons course={onTutorData.courses} />
         )}
       </div>
-      <div className="flex justify-center">
-        <p className="text-center">{onTutorData.summary}</p>
+      {/* Summary Section */}
+      <div className="flex justify-center px-2 md:px-8 text-center">
+        <p className="text-sm md:text-base text-[#ced4da]">
+          {onTutorData.summary}
+        </p>
       </div>
-      <div className="flex justify-between p-8 items-center">
-        <IoStarHalf size={22} />
+      {/* Footer Section */}
+      <div className="flex justify-between items-center mt-6">
+        <IoStarHalf size={22} className="text-[#f9c74f]" />
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-[#415a77] hover:bg-[#6c757d] text-stone-50 rounded-md p-3"
+          className="bg-[#415a77] hover:bg-[#6c757d] text-white rounded-md px-6 py-2 text-sm md:text-base"
         >
           Request
         </button>
@@ -52,8 +59,8 @@ const UserCard = ({ onTutorData }) => {
         >
           <RequestSessionForm />
         </ReusableModal>
-        <p>
-          <span>6</span>sesions
+        <p className="text-sm md:text-base text-[#adb5bd]">
+          <span className="font-bold text-white">6</span> sessions
         </p>
       </div>
     </section>

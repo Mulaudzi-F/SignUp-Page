@@ -22,7 +22,7 @@ const ReusableModal = ({ isOpen, onClose, children }) => {
       }}
     >
       <button onClick={onClose} style={{ float: "right" }}>
-        <RiCloseLargeFill />
+        <RiCloseLargeFill size={30} />
       </button>
       {children}
     </Modal>

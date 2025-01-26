@@ -1,3 +1,5 @@
+import { Outlet } from "react-router";
+import SessionCard from "../Features/SessionCard";
 import UserCard from "../Features/UsersTutorCard";
 import UserTutorCards from "../UI/TutorCards";
 import DashBoardFooter from "./DashboardFooter";
@@ -11,7 +13,7 @@ export default function DashboardLayout() {
         <DashBoardHeader />
         <div className="flex gap-[9.5rem]">
           <DashBoardSideNav />
-          <UserTutorCards />
+          <Outlet />
         </div>
 
         <DashBoardFooter />

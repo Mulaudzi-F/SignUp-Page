@@ -1,10 +1,10 @@
 const SessionCard = () => {
   return (
-    <li className="flex flex-col sm:flex-row items-center bg-[#f8f9fa] shadow-lg rounded-lg p-4 gap-4 sm:gap-6">
+    <li className="flex flex-col sm:flex-row items-center pt-10 bg-[#f8f9fa] shadow-lg rounded-lg p-4 gap-4 sm:gap-6">
       {/* Profile Picture */}
       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
         <img
-          src={profilePicture}
+          src=""
           alt={`tondani's profile`}
           className="w-full h-full object-cover"
         />
@@ -13,10 +13,15 @@ const SessionCard = () => {
       {/* Content Section */}
       <div className="flex-1 flex flex-col gap-2">
         {/* Name */}
-        <h2 className="text-lg font-semibold text-[#222725]">Tondani Hope</h2>
+        <h2 className="text-lg font-semibold text-[#222725]">Maths</h2>
 
         {/* Summary */}
-        <p className="text-sm text-gray-600"></p>
+        <p className="text-sm text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
 
         {/* Time Information */}
         <div className="flex gap-4 text-sm text-gray-500">
@@ -30,16 +35,19 @@ const SessionCard = () => {
         </div>
 
         {/* Status */}
-        <p
-          className={`text-sm font-medium ${
-            status === "Active"
-              ? "text-green-600"
-              : status === "Pending"
-              ? "text-yellow-600"
-              : "text-red-600"
-          }`}
-        >
-          Status: {status}
+        <p>
+          //
+          {
+            //className={`text-sm font-medium ${
+            //     status === "Active"
+            //       ? "text-green-600"
+            //       : status === "Pending"
+            //       ? "text-yellow-600"
+            //       : "text-red-600"
+            //   }`}
+            // >
+            //   Status: {status}
+          }
         </p>
       </div>
 

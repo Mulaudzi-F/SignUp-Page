@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const DashBoardNav = () => {
   return (
     <nav className="text-[white] sticky bottom  sm:fixed  list-none  sm:h-full flex flex-col items-center shadow-md bg-[#222725] rounded-sm w-full  sm:w-40 ">
-      <ul className="flex  py-3  sm:flex-col  justify-center sm:h-5/6 items-center gap-8 ">
+      <ul className="flex  py-3 sm:pt-14 sm:flex-col  justify-center sm:h-5/6 items-center gap-8 ">
         <li className="hover:text-[#1a759f]  cursor-pointer">
           <IoHomeOutline size={25} />
         </li>

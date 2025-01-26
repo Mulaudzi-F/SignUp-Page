@@ -44,21 +44,21 @@ const SignUpPage = () => {
         <h1 className="font-bold  text-2xl text-center">Welcome to CatchUp</h1>
         <form className="flex flex-col gap-4 h-full w-9/12 bg-[#cfd2cd] rounded-lg pt-8  justify-center items-center">
           <input
-            className="w-1/2  p-2"
+            className="w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
             placeholder="First Name"
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
-            className="w-1/2  p-2"
+            className="w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
             placeholder="Last Name"
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
-            className=" w-1/2  p-2"
+            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
             placeholder="Enter your Email Address"
             type="email"
             required
@@ -66,7 +66,7 @@ const SignUpPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className=" w-1/2  p-2"
+            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
             placeholder="Enter Password"
             required
             type="password"
@@ -74,7 +74,7 @@ const SignUpPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            className=" w-1/2  p-2"
+            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="Confirm your Password"
             required
             type="password"
@@ -92,7 +92,7 @@ const SignUpPage = () => {
           </button>
           <p>
             Already Created Account ?
-            <Link to="/SignIn">
+            <Link to="/">
               <button className="hover:text-[#eec170] ml-2 text-[#134074]">
                 SignIn
               </button>

@@ -1,5 +1,7 @@
+import styled from "styled-components";
 import { useTutors } from "../../FetchingUsers/useTutors";
 import UserCard from "../Features/UsersTutorCard";
+import Spinner from "./spinner";
 
 const UserTutorCards = () => {
   const { tutors, isLoading } = useTutors();
@@ -12,7 +14,7 @@ const UserTutorCards = () => {
   }
 
   return (
-    <section className="py-16 mt-8 flex-1 overflow-y-auto flex flex-col px-6 gap-4 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  ">
+    <section className="py-16 mt-8 flex-1 overflow-y-auto flex flex-col px-6 gap-4 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
       {allTutors}
     </section>
   );

@@ -5,30 +5,32 @@ export default function DashBoardHeader() {
   const { user } = useUser();
 
   return (
-    <header className="flex py-4 max-h-[10%] sm:p-0  fixed top-0 left-0 right-0 z-50   shadow-md sm:fixed  bg-[#222725] rounded-sm  text-[white] items-center justify-around w-full">
-      <figure className="justify-self-start flex flex-col justify-center items-center h-1/2 pl-6 md:pl-0 w-1/4 lg:w-[8%] md:w-[12%] rounded-full">
-        <span className="w-1/2 flex justify-center items-center h-full rounded-full ">
-          {" "}
+    <header className="flex items-center justify-between py-4 fixed top-0 left-0 right-0 z-50 bg-[#222725] text-white shadow-md rounded-sm px-4 sm:px-8">
+      {/* Logo Section */}
+      <figure className="flex items-center gap-4">
+        <span className="flex justify-center items-center h-14 w-14 rounded-full overflow-hidden">
           <img
-            className="rounded-full h-14 w-14 max-h-24"
+            className="h-full w-full object-cover"
             alt="userPicture"
             src={`${baseUrl}${user.photo}`}
           />
         </span>
-        <figcaption className="cursor-pointer hidden  md:block hover:text-[#1a759f] pl-2">
-          me
-        </figcaption>
       </figure>
-      <div className="justify-self-center flex  items-center h-full w-1/2">
+
+      {/* Search Bar */}
+      <div className="flex-grow mx-4 sm:mx-6">
         <input
           type="text"
-          className="sm:w-3/5 mr-3 w-full shadow-2xl rounded-lg   shadow-[black] py-2 sm:h-1/2"
+          className="w-full md:w-1/3 py-2 px-4 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-[#1a759f] bg-[#343937] text-white"
           placeholder="Search"
         />
       </div>
-      <div className="justify-self-end cursor-pointer hover:bg-[#1a759f] sm:pr-10 shadow-inner lg:w-1/12 md:w-2/12 w-1/4 sm:h-1/2 flex justify-center rounded-lg shadow-[#f8f9fa] ">
-        <button className="w-full py-2 ">
-          <span>R</span> <span className="w-full ">{user.balance}</span>
+
+      {/* Balance Button */}
+      <div className="flex items-center">
+        <button className="flex items-center justify-center px-4 py-2 bg-[#415a77] hover:bg-[#1a759f] text-white rounded-lg shadow-lg">
+          <span className="mr-2">R</span>
+          <span>{user.balance}</span>
         </button>
       </div>
     </header>

@@ -23,6 +23,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import DashboardLayout from "./Dashboard/DashBoardLayout";
 import ProtectedRoute from "./UI/ProtectedRoute";
+import UserTutorCards from "./UI/TutorCards";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,7 +44,8 @@ function App() {
             {/* <Route path="" element={<AppLayOut />} /> */}
 
             <Route path={"/"} element={<LoginPage />} />
-            <Route path={"SignUp"} element={<SignUpPage />} />
+            <Route path={"SignUp"} element={<SignUpPage />} /> 
+            <Route path={"tutors"} element={<UserTutorCards />}
             <Route
               path={"DashBoardLayout"}
               element={

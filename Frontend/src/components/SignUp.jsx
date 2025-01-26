@@ -39,26 +39,26 @@ const SignUpPage = () => {
     }
   };
   return (
-    <section className="w-full flex justify-center items-center shadow-2xl  h-screen">
-      <div className="flex  rounded-md flex-col justify-center items-center h-full py-6 gap-6 w-1/2">
-        <h1 className="font-bold  text-2xl text-center">Welcome to CatchUp</h1>
-        <form className="flex flex-col gap-4 h-full w-9/12 bg-[#cfd2cd] rounded-lg pt-8  justify-center items-center">
+    <section className="w-full flex justify-center items-center shadow-2xl h-screen bg-gray-100">
+      <div className="flex rounded-md flex-col justify-center items-center h-full py-6 gap-6 w-11/12 md:w-3/4 lg:w-1/2">
+        <h1 className="font-bold text-2xl text-center">Welcome to CatchUp</h1>
+        <form className="flex flex-col gap-4 h-full w-full sm:w-9/12 bg-[#cfd2cd] rounded-lg pt-8 px-4 sm:px-8 justify-center items-center">
           <input
-            className="w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
+            className="w-full sm:w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="First Name"
             required
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
-            className="w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
+            className="w-full sm:w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="Last Name"
             required
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
+            className="w-full sm:w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="Enter your Email Address"
             type="email"
             required
@@ -66,7 +66,7 @@ const SignUpPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500  p-2"
+            className="w-full sm:w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="Enter Password"
             required
             type="password"
@@ -74,7 +74,7 @@ const SignUpPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            className=" w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
+            className="w-full sm:w-1/2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 p-2"
             placeholder="Confirm your Password"
             required
             type="password"
@@ -83,22 +83,22 @@ const SignUpPage = () => {
           />
           <button
             type="submit"
-            className="bg-[#8ecae6] my-2 hover:bg-[white] w-1/2 rounded-md p-2"
-            onClick={/*onhandleSignUp*/ handleCreateUser}
+            className="bg-[#8ecae6] my-2 hover:bg-white w-full sm:w-1/2 rounded-md p-2"
+            onClick={handleCreateUser}
           >
             <Link to={isLoading ? "" : userCreated ? "/SignIn" : ""}>
-              <button className="hover:text-[#eec170]  ">SignUp</button>
+              <span className="hover:text-[#eec170]">SignUp</span>
             </Link>
           </button>
-          <p>
-            Already Created Account ?
+          <p className="text-sm text-center">
+            Already Created Account?{" "}
             <Link to="/">
               <button className="hover:text-[#eec170] ml-2 text-[#134074]">
                 SignIn
               </button>
             </Link>
           </p>
-          <button className="bg-[white] w-1/2 mx-4 flex justify-center items-center gap-2 rounded-md  py-2 hover:bg-[#eec170]">
+          <button className="bg-white w-full sm:w-1/2 mx-4 flex justify-center items-center gap-2 rounded-md py-2 hover:bg-[#eec170]">
             <FaGoogle /> <span>Sign in with Google</span>
           </button>
         </form>

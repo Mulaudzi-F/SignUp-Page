@@ -24,6 +24,7 @@ import { Toaster } from "react-hot-toast";
 import DashboardLayout from "./Dashboard/DashBoardLayout";
 import ProtectedRoute from "./UI/ProtectedRoute";
 import UserTutorCards from "./UI/TutorCards";
+import SessionsCollected from "./UI/SessionsCollected";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -44,8 +45,9 @@ function App() {
             {/* <Route path="" element={<AppLayOut />} /> */}
 
             <Route path={"/"} element={<LoginPage />} />
-            <Route path={"SignUp"} element={<SignUpPage />} /> 
-            <Route path={"tutors"} element={<UserTutorCards />}
+            <Route path={"SignUp"} element={<SignUpPage />} />
+
+            <Route path={"*"} element={<PageNotFound />} />
             <Route
               path={"DashBoardLayout"}
               element={
@@ -53,9 +55,11 @@ function App() {
                   <DashboardLayout />
                 </ProtectedRoute>
               }
-            />
-            <Route path={"UpdatePassword"} element={<UpdatePassword />} />
-            <Route path={"*"} element={<PageNotFound />} />
+            >
+              <Route index element={<UserTutorCards />} />
+              <Route path="sessions" element={<SessionsCollected />} />
+              <Route path={"UpdatePassword"} element={<UpdatePassword />} />
+            </Route>
           </Routes>
         </BrowserRouter>
 

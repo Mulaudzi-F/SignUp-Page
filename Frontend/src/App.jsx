@@ -25,6 +25,8 @@ import DashboardLayout from "./Dashboard/DashBoardLayout";
 import ProtectedRoute from "./UI/ProtectedRoute";
 import UserTutorCards from "./UI/TutorCards";
 import SessionsCollected from "./UI/SessionsCollected";
+import PostCreator from "./Features/PostCreator";
+import PostFeed from "./Features/PostFeeds";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,7 +58,8 @@ function App() {
                 </ProtectedRoute>
               }
             >
-              <Route index element={<UserTutorCards />} />
+              <Route index element={<PostFeed />} />
+              <Route path="userTutorCard" element={<UserTutorCards />} />
               <Route path="sessions" element={<SessionsCollected />} />
               <Route path={"UpdatePassword"} element={<UpdatePassword />} />
             </Route>

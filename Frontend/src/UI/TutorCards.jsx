@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useTutors } from "../../FetchingUsers/useTutors";
 import UserCard from "../Features/UsersTutorCard";
 import Spinner from "./spinner";
+import { Button } from "../components/ui/button";
 
 const UserTutorCards = () => {
   const { tutors, isLoading } = useTutors();

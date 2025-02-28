@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import LoginPage from "./Authentication pages/loginPage";
+import { VideoCallProvider } from "./Features/VideoCallContext";
 import {
   BrowserRouter,
   createBrowserRouter,
@@ -27,6 +28,11 @@ import UserTutorCards from "./UI/TutorCards";
 import SessionsCollected from "./UI/SessionsCollected";
 import PostCreator from "./Features/PostCreator";
 import PostFeed from "./Features/PostFeeds";
+import Chats from "./Features/Chats";
+import MePage from "./UI/MePage";
+import NotificationsPage from "./UI/Notification";
+import SubscriptionPage from "./UI/Subscription";
+import UserDetailPage from "./UI/UserDetails";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -44,8 +50,6 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            {/* <Route path="" element={<AppLayOut />} /> */}
-
             <Route path={"/"} element={<LoginPage />} />
             <Route path={"SignUp"} element={<SignUpPage />} />
 
@@ -59,8 +63,20 @@ function App() {
               }
             >
               <Route index element={<PostFeed />} />
+              <Route path="Chats" element={<Chats />} />
               <Route path="userTutorCard" element={<UserTutorCards />} />
-              <Route path="sessions" element={<SessionsCollected />} />
+              <Route path="MePage" element={<MePage />} />
+              <Route path="Notifications" element={<NotificationsPage />} />
+              <Route path="Subscriptions" element={<SubscriptionPage />} />
+              <Route path="UserDetail" element={<UserDetailPage />} />
+              <Route
+                path="sessions"
+                element={
+                  <VideoCallProvider>
+                    <SessionsCollected />
+                  </VideoCallProvider>
+                }
+              />
               <Route path={"UpdatePassword"} element={<UpdatePassword />} />
             </Route>
           </Routes>

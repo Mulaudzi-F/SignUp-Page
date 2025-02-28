@@ -6,6 +6,7 @@ import CardCourseButtons from "./CardCourseButtons";
 import { useState } from "react";
 import ReusableModal from "../UI/ReUseAbleModal";
 import { RequestSessionForm } from "./RequestSessionForm";
+import { Link } from "react-router-dom";
 
 const UserCard = ({ onTutorData }) => {
   const baseUrl = "http://127.0.0.1:8000/";
@@ -14,16 +15,18 @@ const UserCard = ({ onTutorData }) => {
     <section className="bg-[#343937] text-[#e9ecef] shadow-lg flex flex-col w-full rounded-md p-4 md:p-6">
       {/* Header Section */}
       <div className="flex justify-between items-center">
-        <figure className="flex items-center">
-          <img
-            alt="user-picture"
-            src={`${baseUrl}${onTutorData.photo}`}
-            className="rounded-full h-20 w-20 object-cover shadow-md"
-          />
-          <figcaption className="font-bold text-lg pl-4">
-            {onTutorData.name}
-          </figcaption>
-        </figure>
+        <Link to={"/DashboardLayout/UserDetail"}>
+          <figure className="flex items-center">
+            <img
+              alt="user-picture"
+              src={`${baseUrl}${onTutorData.photo}`}
+              className="rounded-full h-20 w-20 object-cover shadow-md"
+            />
+            <figcaption className="font-bold text-lg pl-4">
+              {onTutorData.name}
+            </figcaption>
+          </figure>
+        </Link>
         <span className="m-1 text-[#e9ecef] hover:text-[#6c757d] cursor-pointer">
           <FaUserPlus size={26} />
         </span>

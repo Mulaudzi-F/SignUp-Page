@@ -22,7 +22,7 @@ function LoginPage() {
   return (
     <div className="flex justify-center flex-col px-2   z-100  w-full h-screen items-center">
       <div className="bg-[#bfd7ff] flex gap-6 justify-center h-3/4 sm:w-1/2 flex-col items-center ">
-        <h2 className="font-bold text-lg">Welcome Back</h2>
+        <h2 className="font-bold text-lg ">Welcome Back</h2>
         <form
           onSubmit={handleLogInUser}
           className="flex justify-center h-4/6  rounded-md  mx-10 align-middle sm:w-1/2 flex-col gap-y-4  items-center"

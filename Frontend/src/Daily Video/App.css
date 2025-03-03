@@ -1,0 +1,227 @@
+/* .app {
+  background:
+    linear-gradient(to bottom right, #2c3e50, #4ca1af),
+    url("/Wallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.browser-unsupported {
+  position: absolute;
+  background: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #4a4a4a;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.call {
+  position: relative; /* To make it a "positioned" container so children layout works */
+  height: calc(100% - 60px); /* Space for the tray */
+}
+
+.large-tiles {
+  height: calc(100% - 132.5px);
+  width: 1000px;
+  position: relative;
+  left: 0%;
+}
+
+.small-tiles {
+  height: 132.5px; /* Video height + 10px padding either side */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-message {
+  padding: 20px 30px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.call-message.error {
+  color: #d81a1a;
+  background-color: #ffffff;
+}
+
+.call-message-header {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.chat {
+  position: absolute;
+  right: 10px;
+  bottom: 75px;
+  width: 300px;
+  height: calc(100% - 150px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+  position: absolute;
+  bottom: 10px;
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.send-chat-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 31px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start-button {
+  padding: 15px 25px;
+  position: absolute;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  background: #4ca1af;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.tile.small {
+  width: 200px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.tile.large {
+  position: relative;
+  margin: 2px;
+  overflow: hidden;
+}
+
+.tile video {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  overflow: hidden;
+}
+
+.tile .background {
+  background-color: #000000;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden; /* Hard-coded 16:9 aspect ratio */
+}
+
+.tile.local video {
+  transform: scale(-1, 1);
+}
+
+.tile.small video {
+  border-radius: 4px;
+}
+
+.tile.small .background {
+  border-radius: 4px;
+}
+
+.tile .overlay {
+  position: absolute;
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.tile .corner {
+  position: absolute;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 10px;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.tray {
+  flex: none;
+  height: 60px;
+  background-color: #f2f2f2;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.tray-button {
+  width: 100%;
+  height: 44px;
+  border: none;
+  background-color: transparent;
+  margin: 0 5px;
+}
+
+.tray-button:disabled {
+  opacity: 33%;
+}
+
+.tray-button:enabled {
+  cursor: pointer;
+}
+
+/* Acts as the first button in a new "group" of buttons separated from those to the left of it */
+.tray-button.new-group {
+  margin-left: auto;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

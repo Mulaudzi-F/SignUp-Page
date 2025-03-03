@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { VideoCallContext } from "./VideoCallContext";
-
+import VideoBtn from "../Daily Video/Video App";
 const SessionCard = () => {
   const { setInCall } = useContext(VideoCallContext);
 
@@ -49,12 +49,14 @@ const SessionCard = () => {
 
       {/* Start Session Button */}
       <div className="flex-shrink-0">
-        <button
+        <VideoBtn />
+
+        {/* <button
           onClick={handleStartSession}
           className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
         >
           Start Session
-        </button>
+        </button> */}
       </div>
     </li>
   );

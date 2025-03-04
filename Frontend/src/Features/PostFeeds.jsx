@@ -72,7 +72,7 @@ function PostFeed() {
         {posts.map((post) => (
           <Card
             key={post.id}
-            className="hover:shadow-lg bg-[#222725] text-[#fff] transition-shadow"
+            className="hover:shadow-lg bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#fff] transition-shadow"
           >
             <CardHeader className="flex flex-row items-center space-x-4">
               {/* Profile Picture */}
@@ -107,41 +107,45 @@ function PostFeed() {
               <div className="flex gap-4 w-full justify-between text-gray-500">
                 {/* Link Icon */}
                 <button
-                  className="p-2 rounded-full text-[#fff] hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                  className="p-2 rounded-full text-[#fff] flex gap-2 hover:bg-gray-100 hover:text-blue-600 transition-colors"
                   data-tooltip-id="link-tooltip"
                   data-tooltip-content="Like"
                 >
                   <AiOutlineLike className="w-5 h-5" />
+                  <span>Like</span>
                 </button>
                 <Tooltip id="link-tooltip" />
 
                 {/* Comment Icon */}
                 <button
-                  className="p-2 rounded-full text-[#fff] hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                  className="p-2 rounded-full text-[#fff] flex gap-2 hover:bg-gray-100 hover:text-blue-600 transition-colors"
                   data-tooltip-id="comment-tooltip"
                   data-tooltip-content="View Comments"
                 >
                   <FiMessageCircle className="w-5 h-5" />
+                  <span>Comment</span>
                 </button>
                 <Tooltip id="comment-tooltip" />
 
                 {/* Repost Icon */}
                 <button
-                  className="p-2 rounded-full text-[#fff] hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                  className="p-2 rounded-full text-[#fff] flex gap-2 hover:bg-gray-100 hover:text-blue-600 transition-colors"
                   data-tooltip-id="repost-tooltip"
                   data-tooltip-content="Repost"
                 >
                   <FiRepeat className="w-5 h-5" />
+                  <span>Repost</span>
                 </button>
                 <Tooltip id="repost-tooltip" />
 
                 {/* Share Icon */}
                 <button
-                  className="p-2 rounded-full text-[#fff] hover:bg-gray-100 hover:text-blue-600 transition-colors"
+                  className="p-2 rounded-full text-[#fff] gap-2 flex hover:bg-gray-100 hover:text-blue-600 transition-colors"
                   data-tooltip-id="share-tooltip"
                   data-tooltip-content="Share"
                 >
                   <FiShare className="w-5 h-5" />
+                  <span>Share</span>
                 </button>
                 <Tooltip id="share-tooltip" />
               </div>

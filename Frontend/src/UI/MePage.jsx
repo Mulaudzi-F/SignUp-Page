@@ -31,7 +31,7 @@ const user = {
 export default function MePage() {
   return (
     <div className="max-w-3/4 w-3/4 mx-auto  pt-24 p-6">
-      <Card className="bg-[#222725] text-[#fff]">
+      <Card className="bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#fff]">
         <CardHeader className="flex items-center gap-4">
           <Avatar>
             <AvatarImage src={user.profilePicture} alt={user.name} />

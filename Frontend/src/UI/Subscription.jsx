@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function SubscriptionPage() {
   return (
     <div className="max-w-2xl mx-auto pt-24  p-6 text-center">
-      <Card className="bg-[#222725] text-[#fff]">
+      <Card className="bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#fff]">
         <CardHeader>
           <h2 className="text-xl font-bold">Premium Version Coming Soon!</h2>
         </CardHeader>

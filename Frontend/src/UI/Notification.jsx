@@ -44,7 +44,7 @@ const notifications = [
 export default function NotificationsPage() {
   return (
     <div className="max-w-2xl pt-24 w-3/4  mx-auto p-6">
-      <Card className="bg-[#222725] text-[#fff]">
+      <Card className="bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#fff]">
         <CardHeader>
           <h2 className="text-xl font-bold">Notifications</h2>
         </CardHeader>

@@ -1,15 +1,9 @@
 import React, { useContext } from "react";
-import { VideoCallContext } from "./VideoCallContext";
-import VideoBtn from "../Daily Video/Video App";
+
+import { Link } from "react-router-dom";
 const SessionCard = () => {
-  const { setInCall } = useContext(VideoCallContext);
-
-  const handleStartSession = () => {
-    setInCall(true); // Trigger the video call
-  };
-
   return (
-    <li className="flex flex-col sm:flex-row w-3/4 mt-4 items-center pt-10 bg-[#222725] shadow-lg rounded-lg p-4 gap-4 sm:gap-6">
+    <li className="flex flex-col sm:flex-row w-3/4 mt-4 items-center pt-10 bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  shadow-lg rounded-lg p-4 gap-4 sm:gap-6">
       {/* Profile Picture */}
       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
         <img
@@ -49,14 +43,11 @@ const SessionCard = () => {
 
       {/* Start Session Button */}
       <div className="flex-shrink-0">
-        <VideoBtn />
-
-        {/* <button
-          onClick={handleStartSession}
-          className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
-        >
-          Start Session
-        </button> */}
+        <Link to={"/videoLayOut"}>
+          <button className="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+            Start Session
+          </button>
+        </Link>
       </div>
     </li>
   );

@@ -37,7 +37,7 @@ function Chats() {
         {chats.map((chat) => (
           <Card
             key={chat.id}
-            className="hover:shadow-lg bg-[#222725] text-[#fff] transition-shadow cursor-pointer"
+            className="hover:shadow-lg bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#fff] transition-shadow cursor-pointer"
             onClick={() => console.log("Chat clicked:", chat.id)} // Navigate to chat details
           >
             <CardHeader className="flex flex-row items-center space-x-4 p-4">

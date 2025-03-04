@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import LoginPage from "./Authentication pages/loginPage";
-import { VideoCallProvider } from "./Features/VideoCallContext";
+
 import {
   BrowserRouter,
   createBrowserRouter,
@@ -33,6 +33,7 @@ import MePage from "./UI/MePage";
 import NotificationsPage from "./UI/Notification";
 import SubscriptionPage from "./UI/Subscription";
 import UserDetailPage from "./UI/UserDetails";
+import VideoLayOut from "./Daily Video/App";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -52,7 +53,14 @@ function App() {
           <Routes>
             <Route path={"/"} element={<LoginPage />} />
             <Route path={"SignUp"} element={<SignUpPage />} />
-
+            <Route
+              path="VideoLayOut"
+              element={
+                <ProtectedRoute>
+                  <VideoLayOut />
+                </ProtectedRoute>
+              }
+            />
             <Route path={"*"} element={<PageNotFound />} />
             <Route
               path={"DashBoardLayout"}
@@ -69,14 +77,7 @@ function App() {
               <Route path="Notifications" element={<NotificationsPage />} />
               <Route path="Subscriptions" element={<SubscriptionPage />} />
               <Route path="UserDetail" element={<UserDetailPage />} />
-              <Route
-                path="sessions"
-                element={
-                  <VideoCallProvider>
-                    <SessionsCollected />
-                  </VideoCallProvider>
-                }
-              />
+              <Route path="sessions" element={<SessionsCollected />} />
               <Route path={"UpdatePassword"} element={<UpdatePassword />} />
             </Route>
           </Routes>

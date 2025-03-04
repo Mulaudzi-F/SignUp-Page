@@ -7,7 +7,7 @@ export default function DashBoardHeader() {
   const { user } = useUser();
 
   return (
-    <header className="flex items-center justify-between py-4 fixed top-0 left-0 right-0 z-50 bg-[#222725] text-white shadow-md rounded-sm px-4 sm:px-8">
+    <header className="flex items-center justify-between py-4 fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-white shadow-md rounded-sm px-4 sm:px-8">
       {/* Logo Section */}
       <Link to={"."}>
         <figure className="flex items-center gap-4">

@@ -1,4 +1,4 @@
-/* .app {
+.app {
   background:
     linear-gradient(to bottom right, #2c3e50, #4ca1af),
     url("/Wallpaper.jpg") no-repeat center center;
@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .browser-unsupported {
   position: absolute;

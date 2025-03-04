@@ -12,7 +12,7 @@ export default function StartButton(props) {
       disabled={props.disabled}
       onClick={props.onClick}
     >
-      ❤️ Connect with Family
+      Join CatchUp Room
     </button>
   );
 }

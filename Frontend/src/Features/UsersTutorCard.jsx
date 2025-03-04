@@ -12,7 +12,7 @@ const UserCard = ({ onTutorData }) => {
   const baseUrl = "http://127.0.0.1:8000/";
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section className="bg-[#343937] text-[#e9ecef] shadow-lg flex flex-col w-full rounded-md p-4 md:p-6">
+    <section className="bg-gradient-to-br from-[#2c3e50] to-[#4ca1af]  text-[#e9ecef] shadow-lg flex flex-col w-full rounded-md p-4 md:p-6">
       {/* Header Section */}
       <div className="flex justify-between items-center">
         <Link to={"/DashboardLayout/UserDetail"}>
